@@ -1,0 +1,456 @@
+<?php
+?>
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+STOCK MARKET PRICE ANALYSIS AND PREDICTION
+</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/icon" href="assets/images/LONGO.png"/>
+    <!-- Font Awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">    
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/> 
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css"/> 
+    <!-- Progress bar  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css"/> 
+     <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+
+    <!-- Main Style -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Open Sans for body font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	  
+    <![endif]-->
+		<section id="menu-area">      
+    <nav class="navbar navbar-default" role="navigation">  
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          
+          <!-- LOGO -->              
+          <!-- TEXT BASED LOGO -->
+          <a class="navbar-brand" href="index.html">SMAP</a>              
+          <!-- IMG BASED LOGO  -->
+           <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+            <li class="active"><a href="mainproject.php">Home</a></li>
+            
+
+            
+
+            
+
+            <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+            
+            
+          </ul>                     
+        </div><!--/.nav-collapse -->
+        <a href="#" id="search-icon">
+          <i class="fa fa-search">            
+          </i>
+        </a>
+      </div>     
+    
+  
+      
+      
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            
+			<span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- LOGO -->              
+          <!-- TEXT BASED LOGO -->
+		  
+           <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <i class="fa fa-leaf feature-icon"></i>
+                  <h4 class="feat-title">Visualization</h4>
+                  <p>The visualization of stock market is done using highcharts</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <i class="fa fa-mobile feature-icon"></i>
+                  <h4 class="feat-title">Stock Predictions</h4>
+                  <p>Stock Market Predictions is shown through Graphs</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <i class="fa fa-thumbs-o-up feature-icon"></i>
+                  <h4 class="feat-title">Great Features</h4>
+                  <p>All the predictions are done using Machine Learning</p>
+				  </div>
+              </div>
+		</nav>
+</section>		
+          <!-- IMG BASED LOGO  -->
+           <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+        </div>
+		</div>
+		</nav>
+		
+		
+	</head>
+	<body>
+	<style type="text/css">
+ .main { 
+                border: 1px solid green; 
+                float: bottom; 
+                min-height: 100px; 
+                margin: 2px; 
+                padding: 10px; 
+                min-width: 77px; 
+                position:relative; 
+            } 
+            .gfg { 
+                font-size:20px; 
+                color:green; 
+                font-weight:bold; 
+                tect-align:center 
+            } 
+            .geeks { 
+                text-align:center; 
+            } 
+            #bottom { 
+                position:absolute;                  
+                bottom:100;                          
+                left:0;                          
+            } 
+
+		</style>
+<script src="code/highcharts.js"></script>
+<script src="code/modules/series-label.js"></script>
+<script src="code/modules/exporting.js"></script>
+<script src="code/modules/export-data.js"></script>
+<script src="code/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"  style="height: 300px; width: 80% "></div>
+	
+    <p class="highcharts-description">
+    </p>
+</figure>
+
+
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+
+    title: {
+        text: '3MINDIA'
+    },
+
+    subtitle: {
+        text: 'NSE'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Stock Values'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 2013 to 2020'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: null
+        }
+    },
+
+    series: [{
+        name: 'Predicted',
+        data: [10606.79173,
+10608.7527,
+11287.85091,
+11201.13787,
+11381.02146,
+11296.02967,
+10850.80898,
+10791.03401,
+10659.54888,
+10715.11303,
+10624.10939,
+10691.51195,
+10673.40798,
+10501.18245,
+10409.79771,
+10205.78211,
+9822.495483,
+10031.80745,
+9856.821998,
+9856.804654,
+9972.637896,
+9610.538116,
+9533.177936,
+9759.890848,
+9897.448844,
+9879.98442,
+9881.071723,
+9806.933809,
+9893.018046,
+10162.74831,
+11693.02745,
+11460.39515,
+11372.79936,
+10564.94162,
+10581.01139,
+11161.7999,
+11050.40071,
+10940.95358,
+10847.06569,
+10853.48737,
+10879.04337,
+10712.47463,
+10273.60461,
+10349.92501,
+10402.22402,
+10401.66334,
+10948.20563,
+10703.74828,
+10751.18403,
+10774.80728,
+10761.13518,
+10784.45774,
+10861.48409,
+10726.10156,
+10716.81762,
+10736.15163,
+10784.9226,
+10690.63324,
+10796.22778,
+10799.34403,
+10800.45986,
+10800.18181,
+10659.37659,
+10718.97512,
+10721.4794,
+10731.63769,
+10842.74906,
+10753.08958,
+10683.13283,
+10711.18934,
+10482.45021,
+11117.95454,
+11366.43252,
+13411.14695,
+13567.4438,
+13489.67276,
+14048.0951,
+13245.41212,
+13328.68803,
+13734.15617,
+13581.77895,
+13407.59353,
+13506.93611,
+13313.18952,
+13564.50353,
+13350.29446,
+13186.66459,
+13129.27793,
+13236.29132,
+13249.56432,
+13249.49245,
+13245.6818,
+13207.40648,
+13087.18153,
+13139.63187,
+13062.55357,
+13015.70806,
+12617.76598,
+12745.68137,
+13043.10772]
+    }, {
+        name: 'Expected',
+        data: [10595.59961,
+11215.09961,
+11251,
+11397.5,
+11322,
+10935.79981,
+10784.29981,
+10644.59961,
+10673.79981,
+10589.59961,
+10654,
+10657,
+10514.29981,
+10403.90039,
+10209.79981,
+9837.700195,
+9962.450195,
+9838.950195,
+9827.5,
+9925.5,
+9643.400391,
+9521.5,
+9713.349609,
+9881.150391,
+9878.349609,
+9881.25,
+9826.599609,
+9891.700195,
+10135.79981,
+11532.79981,
+11565.90039,
+11474,
+10708.09961,
+10623.40039,
+11023,
+11041.09961,
+10951.5,
+10854.5,
+10850.2002,
+10863.90039,
+10720.29981,
+10305,
+10299.5,
+10350,
+10382.2002,
+10876,
+10755.90039,
+10784.40039,
+10781,
+10774.79981,
+10779.7002,
+10850,
+10740.79981,
+10714.2002,
+10722,
+10772.7002,
+10696,
+10780.59961,
+10795.5,
+10804.40039,
+10799.5,
+10673.79981,
+10703.09961,
+10708.2002,
+10725,
+10826,
+10766.40039,
+10693.5,
+10699.79981,
+10497.2002,
+11037,
+11349.29981,
+13229,
+13623.2002,
+13714.90039,
+14080.5,
+13424.09961,
+13393.7002,
+13673.5,
+13557.7002,
+13424.7002,
+13499.09961,
+13323.79981,
+13521.5,
+13365.29981,
+13200.5,
+13131.2002,
+13202.79981,
+13226.59961,
+13242,
+13247.29981,
+13212,
+13098.7002,
+13126.79981,
+13059.09961,
+13009.7002,
+12655.79981,
+12716.29981,
+12980,
+12960.7002
+]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'left',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+		<section id="feature">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title"></h2>
+            <span class="line"></span>
+            <p></p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="feature-content">
+            <div class="row">
+             
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+	</body>
+</html>

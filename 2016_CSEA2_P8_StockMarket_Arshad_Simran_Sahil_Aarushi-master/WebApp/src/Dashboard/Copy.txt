@@ -1,0 +1,1 @@
+Copy the assets file from Smap in the dashboard folder to run the dashboard completely withh all necessary files
